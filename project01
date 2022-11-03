@@ -1,0 +1,41 @@
+import random
+
+def gameWin(computer, you):
+    if computer==you:
+        return None
+    elif computer== 'Stone':
+        if you=='Scissor':
+            return False
+        elif you=='Paper':
+            return True
+        elif computer== 'Paper':
+         if you=='Stone':
+            return False
+        elif you=='Scissor':
+            return True
+        elif computer== 'Scissor':
+         if you=='Paper':
+            return False
+         elif you=='Stone':
+            return True
+
+print("Computer Turn: Stone(Stone) Paper(Paper) or Scissor(Scissor)?")
+randNo = random.randint(1, 3)
+if randNo == 1:
+    computer='Stone'
+elif randNo == 2:
+    computer ='Paper'
+elif randNo == 3:
+    computer='Scissor'
+
+you = input("Player's Turn: Stone(Stone) Paper(Paper) or Scissor(Scissor)?")
+a=gameWin(computer, you)
+
+print(f"computer chose {computer}")
+print(f"computer chose {you}")
+if a== None:
+    print("Tie!")
+elif a:
+    print("You Win!")
+else:
+    print("You Loss!")
